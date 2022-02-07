@@ -11,21 +11,23 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <title>Aldi & Aldo</title>
+    <title>Aldo & Aldi</title>
+
 </head>
 <body>
     <div class="container dark">
-        <div class="contain border animate__animated animate__fadeIn animate__slow">
+        <div class="contain border animate0">
             <img class="header" src="head.png">
             <div class="text">
                 <p class="text-head text-white m-3">WE INVITE YOU TO OUR CAREMONY</p>
                 <p class="text-1 text-white m-2">Upacara Manusa Yadnya</p>
-                <p class="text-n1 text-primary m-3 animate__animated animate__slideInDown">Mapandes / Potong Gigi</p>
+                <p class="text-n1 text-primary m-3 animate1">Mapandes / Potong Gigi</p>
                 <p class="text-n2 text-white m-1">Om Swastiastu</p>
                 <p class="text-2 text-white w-50">Atas Asung Karta Wara Nugraha Ida Sang Hyang Widhi Wasa, kami menyelenggarakan upacara manusa yadnya Mepandes Putra kami. Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila bapak/ibu/saudara/i/keluarga dapat berkenaan untuk hadir pada:</p>
-                <p class="text-1 text-primary animate__animated animate__slideInUp">JUMAT, 11 FEBRUARI 2022 (14.00 WITA - SELESAI)</p>
-                <p class="text-1 text-primary animate__animated animate__slideInUp">BANJAR DINAS BULULADA, DESA SELAT, SINGARAJA</p>
+                <p class="text-1 text-primary animate2">JUMAT, 11 FEBRUARI 2022 (14.00 WITA - SELESAI)</p>
+                <p class="text-1 text-primary animate3">BANJAR DINAS BULULADA, DESA SELAT, SINGARAJA</p>
                 <p class="text-2 text-white w-50">Kami sekeluarga mengucapkan terima kasih kepada bapak/ibu/saudara/i/keluarga atas berkenannya menghadiri acara kami dan memberikan doa.</p>
                 <p class="text-n2 text-white m-1">Om Shanti, Shanti, Shanti Om</p>
             </div>
@@ -34,15 +36,33 @@
             </div>
         </div>
     </div>
-    <audio autoplay loop hidden id="music">
+
+    <div class="modal">
+        <p class="animate__animated animate__fadeIn">
+            Click broh...
+        </p>
+    </div>
+
+    <audio autoplay loop id="music">
         <source src="music.mp3" type="audio/mp3">
     </audio>
-    
     <script>
-        const music = document.querySelector('#music');
-        document.onload = () => {
+        const music = document.getElementById('music');
+        const play = document.querySelector('.modal');
+        const animate0 = document.querySelector('.animate0');
+        const animate1 = document.querySelector('.animate1');
+        const animate2 = document.querySelector('.animate2');
+        const animate3 = document.querySelector('.animate3');
+
+        play.addEventListener('click', () => {
             music.play();
-        }
+            play.style.display = 'none';
+            animate0.classList.add('animate__animated', 'animate__fadeIn', 'animate__slow');
+            animate1.classList.add('animate__animated', 'animate__slideInDown');
+            animate2.classList.add('animate__animated', 'animate__slideInUp');
+            animate3.classList.add('animate__animated', 'animate__slideInUp');
+        })
+
     </script>
 </body>
 </html>
